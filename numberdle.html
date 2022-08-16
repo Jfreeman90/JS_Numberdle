@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .button {
+            background-color: #64748b;
+            border: none;
+            color: white;
+            width: 175px;
+            padding: 10px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 22px;
+            transition-duration: 0.4s;
+            border-radius: 8px;
+            border: 2px solid #18181b;
+        }
+        .button:hover {
+            background-color: #cbd5e1; 
+            color: #18181b;
+        }
+        .images {
+            display: none;
+            position: absolute;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numberdle</title>
+</head>
+<body>
+    <ul style="  list-style-type: none;   margin: 0;    padding: 0;">
+        <li id="show_rules_text"><a href="#" onclick="show_hide_rules()">Click to show rules</a></li>
+        <li style="display: none" id="hide_rules_text"><a href="#" onclick="show_hide_rules()">Click to hide rules</a></li>
+      </ul>
+
+    <!--Create the image elemtnt that can be showwn or hidden-->
+    <div class="images" id ="rules_image">
+        <img src="numberdle_rules.png" alt="" width="430" height="460"> 
+    </div>
+
+
+    <div style="text-align: center">
+        <canvas style="padding: 5px; border-radius: 15px;">
+            <!--Object that will be manipulated using the java script-->
+        </canvas>
+        <div>
+            <button id="save_button" type="submit" onclick=check_row() class="button" >Check row</button>
+        </div>
+        <div>
+            <button id="new_game_button" type="submit" onclick=new_game() class="button" >New Game</button>
+        </div>
+    </div>
+    <script src="./numberdle_utils.js"></script>
+    <script src="./numberdle.js"></script>
+</body>
+</html>
